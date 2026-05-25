@@ -1,0 +1,225 @@
+/* === НОВАЯ ЦВЕТОВАЯ ГАММА: фиолетовый, розовый, фуксия + голубой === */
+:root {
+  --pg-violet: #7b2d8e;      /* глубокий фиолетовый (основной) */
+  --pg-fuchsia: #d63384;     /* яркая фуксия (акцент) */
+  --pg-pink: #e83e8c;        /* розовый для вторых элементов */
+  --pg-lightblue: #6eb5d0;   /* мягкий голубой для акцентов */
+  --risk-high: #dc3545;      /* красный оставим для тревог */
+  --risk-medium: #fd7e14;    /* оранжевый для средней зоны */
+  --risk-low: #20c997;       /* мятно-зелёный для хорошего */
+  --light-bg: #fdf6fc;       /* очень светлый розоватый фон */
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--light-bg);
+  margin: 0;
+  padding: 0;
+}
+
+/* Переопределение основных Bootstrap-цветов под новую гамму */
+.btn-primary {
+  background-color: var(--pg-violet);
+  border-color: var(--pg-violet);
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #6a2479;
+  border-color: #6a2479;
+}
+.btn-success {
+  background-color: var(--pg-fuchsia);
+  border-color: var(--pg-fuchsia);
+}
+.btn-success:hover, .btn-success:focus {
+  background-color: #c0296e;
+  border-color: #c0296e;
+}
+.btn-outline-success {
+  color: var(--pg-fuchsia);
+  border-color: var(--pg-fuchsia);
+}
+.btn-outline-success:hover {
+  background-color: var(--pg-fuchsia);
+  color: white;
+}
+.bg-primary {
+  background-color: var(--pg-violet) !important;
+}
+.bg-success {
+  background-color: var(--risk-low) !important;
+}
+.bg-warning {
+  background-color: var(--risk-medium) !important;
+}
+.text-primary {
+  color: var(--pg-violet) !important;
+}
+.text-success {
+  color: var(--risk-low) !important;
+}
+.text-danger {
+  color: var(--risk-high) !important;
+}
+.badge.bg-success {
+  background-color: var(--risk-low) !important;
+}
+.badge.bg-warning {
+  background-color: var(--risk-medium) !important;
+  color: #000;
+}
+
+/* Переключатель ролей */
+.role-switch {
+  background: #fff;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.role-btn {
+  border: 2px solid #dee2e6;
+  background: white;
+  padding: 0.6rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  color: #495057;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.role-btn.active {
+  background: var(--pg-violet);
+  color: white;
+  border-color: var(--pg-violet);
+}
+.role-btn i { font-size: 1.2rem; }
+
+.app-container {
+  max-width: 1000px;
+  margin: 1rem auto;
+  padding: 0 15px 2rem;
+}
+
+.card-custom {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  padding: 1.8rem;
+  margin-bottom: 1.8rem;
+  border: none;
+  transition: 0.2s;
+}
+
+/* Навигационные пилюли */
+.nav-pills .nav-link {
+  border-radius: 30px;
+  padding: 0.6rem 1.5rem;
+  color: #495057;
+  font-weight: 500;
+  margin-right: 0.3rem;
+}
+.nav-pills .nav-link.active {
+  background: var(--pg-fuchsia);
+  color: white;
+}
+
+/* Hero-блоки: теперь в фиолетово-розовых тонах */
+.student-hero {
+  background: linear-gradient(135deg, #7b2d8e, #c9408b); /* фиолетовый → фуксия */
+  color: white;
+  border-radius: 24px;
+  padding: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+.tutor-hero {
+  background: linear-gradient(135deg, #e83e8c, #6f42c1); /* розовый → фиолетовый */
+  color: white;
+  border-radius: 24px;
+  padding: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+
+.badge-risk {
+  font-size: 0.75rem;
+  padding: 0.35em 0.8em;
+  border-radius: 20px;
+}
+
+.table-students td {
+  vertical-align: middle;
+}
+
+.risk-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+.risk-dot.bg-success { background-color: var(--risk-low) !important; }
+.risk-dot.bg-warning { background-color: var(--risk-medium) !important; }
+.risk-dot.bg-danger  { background-color: var(--risk-high) !important; }
+
+.offcanvas-custom {
+  width: 340px !important;
+}
+
+/* Афиша */
+.poster-item {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.poster-date {
+  background: var(--pg-fuchsia);
+  color: white;
+  border-radius: 12px;
+  padding: 0.5rem;
+  text-align: center;
+  min-width: 55px;
+  font-weight: bold;
+}
+
+/* База знаний */
+.knowledge-card {
+  border-left: 5px solid var(--pg-fuchsia);
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  cursor: pointer;
+}
+
+/* Прогресс-бары */
+.progress {
+  height: 10px;
+  border-radius: 10px;
+}
+.progress-bar.bg-warning {
+  background-color: var(--risk-medium) !important;
+}
+.progress-bar.bg-success {
+  background-color: var(--risk-low) !important;
+}
+
+/* Модальные окна — перекрасим заголовки */
+.modal-header.bg-primary {
+  background: linear-gradient(135deg, var(--pg-violet), var(--pg-fuchsia)) !important;
+}
+.modal-header.bg-dark {
+  background: linear-gradient(135deg, #4a1942, #8b2d5c) !important;
+}
+
+/* Адаптивность */
+@media (max-width: 576px) {
+  .role-btn { padding: 0.5rem 1.2rem; font-size: 0.9rem; }
+}
